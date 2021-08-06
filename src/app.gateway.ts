@@ -19,6 +19,7 @@ export class AppGateway
 
   @SubscribeMessage('msgToServer')
   handleMessage(client: Socket, payload: string): void {
+    console.log('payload', payload);
     if (payload === 'delete') {
       messages.pop();
     } else {
